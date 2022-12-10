@@ -7,17 +7,18 @@ const Navbar = () => {
     {
       id: 1,
       path: '/',
-      text: 'Books',
+      text: 'BOOKS',
     },
     {
       id: 2,
       path: '/categories',
-      text: 'Categories',
+      text: 'CATEGORIES',
     },
   ];
 
   return (
     <nav className="navBar">
+      <h1>Bookstore CMS</h1>
       <ul className="menuNav">
         {links.map((link) => (
           <li key={link.id} className="navList">
