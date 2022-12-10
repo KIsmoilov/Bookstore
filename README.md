@@ -1,7 +1,7 @@
 
 <div align="center">
 
-# Math-Magicians
+# Bookstore
 
 </div>
 
@@ -34,9 +34,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Math-Magicians <a name="about-project"></a>
+# 📖 Bookstore <a name="about-project"></a>
 
-"Math magicians" is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to make simple calculations and read a random math-related quote.
+"Bookstore CMS" is a website for all book lovers. It is a Single Page App (SPA) that allows users to observe displayed list of book with the features of adding and removing books.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -50,6 +50,8 @@
 
 - React JS
 
+- Redux
+
 - Lighthouse (An open-source, automated tool for improving the quality of web pages. It has audits for performance, accessibility, progressive web apps, SEO and more).
 
 - Stylelint (A mighty, modern linter that helps you avoid errors and enforce conventions in your styles).
@@ -60,7 +62,8 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **The users are able to make different calculations**
+- **The users are able to add new books**
+- **The users are able to remove books**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -92,7 +95,7 @@ To get a local copy up and running, follow these steps.
 
 1. Clone the repo by running the command
    ```sh
-    git clone https://github.com/KIsmoilov/math-magicians.git
+    git clone https://github.com/KIsmoilov/Bookstore.git
    ```
 
 ### Install
@@ -101,15 +104,15 @@ Install this project with:
 
 2. Open the directory of the project
    ```sh
-   cd math-magicians
+   cd Bookstore
    ```
 3. Open the directory of the src
    ```sh
    cd src
    ```
-4. Open the index.html file
+4. Open the index.js file
    ```sh
-   Click and open the index.html file
+   Click and open the index.js file
    ```
 
 ### Usage
@@ -156,7 +159,7 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **The user will be able to do mathematical calculations**
+- [ ] **The user will be able to see book categories section**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -166,7 +169,7 @@ You can deploy this project using:
 
 - Contributions, issues, and feature requests are welcome!
 
-- Feel free to check the [issues page](https://github.com/KIsmoilov/math-magicians/issues).
+- Feel free to check the [issues page](https://github.com/KIsmoilov/Bookstore/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -200,9 +203,9 @@ You can deploy this project using:
    ```
 
 
-- **Which index.html file should I open to make some changes in src folder or dist folder?**
+- **Which file should I open to make some changes in src folder or dist folder?**
 
-  - Please make change only to Html, CSS and JS files in the src directory
+  - Please make change only to CSS and JS files in the src directory
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
