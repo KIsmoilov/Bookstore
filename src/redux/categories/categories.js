@@ -2,11 +2,9 @@
 const CHECK_STATUS = 'CHECKING_STATUS';
 
 // Reducer
-const initState = {
-  categories: [],
-};
+const categories = [];
 
-export default function categoryReducer(state = initState, action) {
+export default function categoryReducer(state = categories, action) {
   switch (action.type) {
     case CHECK_STATUS:
       return 'Under Construction';
@@ -17,5 +15,7 @@ export default function categoryReducer(state = initState, action) {
 // Action Creators
 export const checkStatus = (category) => ({
   type: CHECK_STATUS,
-  category,
+  payload: category,
 });
+
+export const bookCategory = (state) => state.categories;
