@@ -24,8 +24,6 @@ const Navbar = () => {
           <li key={link.id} className="navList">
             <NavLink
               to={link.path}
-              activeClassName="active-link"
-              exact
             >
               {link.text}
             </NavLink>

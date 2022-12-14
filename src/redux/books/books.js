@@ -3,34 +3,52 @@ const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 
 // Reducer
-const initState = {
-  books: [],
-};
+const books = [
+  {
+    title: 'The Hunger Games',
+    author: 'Suzanne Collins',
+    id: 1,
+    category: 'Action',
+    percentage: '64',
+    chapter: 'Chapter 17',
+  },
+  {
+    title: 'Dune',
+    author: 'Frank Herbert',
+    id: 2,
+    category: 'Science Fiction',
+    percentage: '8',
+    chapter: 'Chapter 3: "A Lesson Learned"',
+  },
+  {
+    title: 'Capital in the Twenty-First Century',
+    author: 'Suzanne Collins',
+    id: 3,
+    category: 'Economy',
+    percentage: '0',
+    chapter: 'Introduction',
+  },
+];
 
-export default function bookReducer(state = initState, action) {
+export default function bookReducer(state = books, action) {
   switch (action.type) {
     case ADD_BOOK:
       return [...state, action.payload];
     case REMOVE_BOOK:
-      return [state.filter((book) => book.id === action.payload.id)];
+      return state.filter((book) => book.id !== action.payload);
     default: return state;
   }
 }
 
 // Action Creators
-const nextBookId = 0;
-export const addBook = () => ({
+export const addBook = (payload) => ({
   type: ADD_BOOK,
-  payload: {
-    title: '',
-    author: '',
-    id: nextBookId + 1,
-  },
+  payload,
 });
 
-export const removeBook = (id) => ({
+export const removeBook = (payload) => ({
   type: REMOVE_BOOK,
-  payload: {
-    id,
-  },
+  payload,
 });
+
+export const listOfBooks = (state) => state.books;
