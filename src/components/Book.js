@@ -1,15 +1,19 @@
 /* eslint-disable camelcase */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBookAsync } from '../redux/books/books';
+import { removeBookAsync, DisplayBooks } from '../redux/books/books';
 
 export default function Book({ book }) {
   const dispatch = useDispatch();
 
   const {
-    title, author, category, item_id,
+    title, author, category, id,
   } = book;
+
+  useEffect(() => {
+    dispatch(DisplayBooks());
+  }, [dispatch]);
 
   return (
     <>
@@ -23,7 +27,8 @@ export default function Book({ book }) {
             <button
               type="button"
               onClick={() => {
-                dispatch(removeBookAsync(item_id));
+                dispatch(removeBookAsync(id));
+                dispatch(DisplayBooks());
               }}
             >
               Remove

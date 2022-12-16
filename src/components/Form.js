@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/books/books';
+import { addBookAsync } from '../redux/books/books';
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ const Form = () => {
           const payload = {
             item_id: uuidv4(), title, author, category: 'fiction',
           };
-          dispatch(addBook(payload));
+          dispatch(addBookAsync(payload));
           e.target.reset();
         }}
       >
