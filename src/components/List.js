@@ -7,7 +7,7 @@ const List = () => {
   const books = useSelector(listOfBooks);
   return (
     <div className="bookList">
-      {books.map((book) => <Book key={book.id} book={book} />)}
+      {books.map((book) => <Book key={book.item_id} book={book} />)}
     </div>
   );
 };
