@@ -8,6 +8,7 @@ const BASE_URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/boo
 const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 const DISPLAY_BOOKS = 'DISPLAY_BOOKS';
+const LOAD_BOOKS = 'LOAD_BOOKS';
 
 // Reducer
 const books = [];
@@ -25,6 +26,8 @@ export default function bookReducer(state = books, action) {
       return [
         ...action.payload,
       ];
+    case LOAD_BOOKS:
+      return [...action.payload];
     default: return state;
   }
 }
@@ -59,10 +62,13 @@ export const addBook = createAsyncThunk(ADD_BOOK,
     return payload;
   });
 
-export const removeBook = createAsyncThunk(REMOVE_BOOK,
-  async (item_id) => {
+const loadBook = (books) => ({ type: LOAD_BOOKS, payload: books });
+
+export const removeBookAsync = createAsyncThunk(REMOVE_BOOK,
+  async (item_id, thunk) => {
     await axios.delete(`${BASE_URL}/${item_id}`);
-    return item_id;
+    const books = axios.get(BASE_URL);
+    return thunk.dispatch(loadBook(books));
   });
 
 export const listOfBooks = (state) => state.books;

@@ -1,8 +1,8 @@
 /* eslint-disable camelcase */
-import React, { useEffect } from 'react';
+import React from 'react';
 import { PropTypes } from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook, DisplayBooks } from '../redux/books/books';
+import { removeBookAsync } from '../redux/books/books';
 
 export default function Book({ book }) {
   const dispatch = useDispatch();
@@ -10,10 +10,6 @@ export default function Book({ book }) {
   const {
     title, author, category, item_id,
   } = book;
-
-  useEffect(() => {
-    dispatch(DisplayBooks());
-  });
 
   return (
     <>
@@ -25,10 +21,9 @@ export default function Book({ book }) {
           <li><button type="submit">Comments</button></li>
           <li>
             <button
-              type="submit"
-              onClick={(e) => {
-                e.preventDefault();
-                dispatch(removeBook(item_id));
+              type="button"
+              onClick={() => {
+                dispatch(removeBookAsync(item_id));
               }}
             >
               Remove
