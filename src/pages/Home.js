@@ -1,10 +1,12 @@
 import React from 'react';
 import Form from '../components/Form';
 import List from '../components/List';
+import './pages.css';
 
 const Books = () => (
-  <div>
+  <div className="bookContainer">
     <List />
+    <hr />
     <Form />
   </div>
 );
