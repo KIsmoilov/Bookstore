@@ -72,7 +72,7 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 Please use the following link to access the website:
-- [Live Demo Link](#)
+- [Live Demo Link](https://bookstore-api-lf6q.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
