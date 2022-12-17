@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import '../index.css';
+import { FaUserAlt } from 'react-icons/fa';
+import './Navbar.css';
 
 const Navbar = () => {
   const links = [
@@ -24,12 +25,17 @@ const Navbar = () => {
           <li key={link.id} className="navList">
             <NavLink
               to={link.path}
+              className="active-link"
+              exact
             >
               {link.text}
             </NavLink>
           </li>
         ))}
       </ul>
+      <button type="button" className="userBtn">
+        <FaUserAlt className="userIcon" />
+      </button>
     </nav>
   );
 };
